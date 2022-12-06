@@ -1,6 +1,6 @@
 <template>
   <main v-if="!loading">
-      Show Data
+      <DataTitleComp :text="title" :dataDate="dataDate"/>
   </main>
 
   <main v-else class="flex-col align-center justify-center text-center">
@@ -12,11 +12,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import DataTitleComp from '@/components/DataTitleComp.vue'
 
 export default {
   name: 'HomeView',
   components: {
+    DataTitleComp
   },
   data () {
     return {
