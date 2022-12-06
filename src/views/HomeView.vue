@@ -1,6 +1,7 @@
 <template>
   <main v-if="!loading">
-      <DataTitleComp :text="title" :dataDate="dataDate"/>
+    <DataTitleComp :text="title" :dataDate="dataDate"/>
+    <DataBoxesComp :stats="stats"/>
   </main>
 
   <main v-else class="flex-col align-center justify-center text-center">
@@ -13,11 +14,13 @@
 
 <script>
 import DataTitleComp from '@/components/DataTitleComp.vue'
+import DataBoxesComp from '@/components/DataBoxesComp.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    DataTitleComp
+    DataTitleComp,
+    DataBoxesComp
   },
   data () {
     return {
@@ -41,7 +44,7 @@ export default {
     console.log(data)
 
     this.dataDate = data.Date
-    this.stats = data.Globle
+    this.stats = data.Global
     this.countries = data.Countries
     this.loading = false
   }
