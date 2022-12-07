@@ -2,6 +2,7 @@
   <main v-if="!loading">
     <DataTitleComp :text="title" :dataDate="dataDate"/>
     <DataBoxesComp :stats="stats"/>
+    <CountrySelectComp :countries="countries"/>
   </main>
 
   <main v-else class="flex-col align-center justify-center text-center">
@@ -15,12 +16,14 @@
 <script>
 import DataTitleComp from '@/components/DataTitleComp.vue'
 import DataBoxesComp from '@/components/DataBoxesComp.vue'
+import CountrySelectComp from '@/components/CountrySelectComp.vue'
 
 export default {
   name: 'HomeView',
   components: {
     DataTitleComp,
-    DataBoxesComp
+    DataBoxesComp,
+    CountrySelectComp
   },
   data () {
     return {
