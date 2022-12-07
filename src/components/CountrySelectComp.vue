@@ -20,7 +20,7 @@ export default {
 
       console.log(country)
 
-      this.$emit('get-country')
+      this.$emit('get-country', country)
     }
   }
 }
